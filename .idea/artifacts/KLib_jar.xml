@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="KLib:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/KLib_jar</output-path>
+    <root id="archive" name="KLib.jar">
+      <element id="module-output" name="KLib" />
+    </root>
+  </artifact>
+</component>
