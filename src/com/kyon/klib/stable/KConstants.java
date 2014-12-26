@@ -18,6 +18,8 @@ public class KConstants {
     /**
      * ui
      */
+    public static final int MESSAGE_HEIGHT = 50;
+
     public static final int CORNER_RAD = 10;
     public static final int TEXT_SIZE_NORMAL = 17;
     public static final int TEXT_SIZE_SMALL = 12;
