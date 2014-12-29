@@ -157,7 +157,7 @@ public class KMessager {
         uiMessager.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
             public void onShow(DialogInterface dialogInterface) {
-                start(Effectstype.Slidetop);
+                start(Effectstype.Fliph);
             }
         });
         uiMessager.show();
@@ -277,7 +277,7 @@ public class KMessager {
                         break;
                     case MotionEvent.ACTION_UP:
                         textButton.setTextColor(KConstants.TEXT_COLOR_BLUE);
-                        textButton.setBackgroundColor(Color.WHITE);
+                        textButton.setBackgroundColor(Color.TRANSPARENT);
 
                 }
                 return false;

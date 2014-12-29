@@ -48,10 +48,10 @@ public class WelcomeActivity extends Activity {
         image.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
         image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        image.setImageResource(KResourceUtil.getDrawableId(this, "sea"));
-        Animation scaleAnimation = new ScaleAnimation(1.0f, 1.2f, 1.0f, 1.2f,
+        image.setImageResource(KResourceUtil.getDrawableId(this, "winter"));
+        Animation scaleAnimation = new ScaleAnimation(1.0f, 1.13f, 1.0f, 1.13f,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_PARENT, 0.5f);
-        scaleAnimation.setDuration(5000);
+        scaleAnimation.setDuration(2800);
         image.startAnimation(scaleAnimation);
         root.addView(image);
 
@@ -76,9 +76,9 @@ public class WelcomeActivity extends Activity {
     private void initPage() {
 
         /**
-         * 欢迎界面停留4500毫秒后进入主界面
+         * 欢迎界面停留2500毫秒后进入主界面
          */
-        final StartPageTimer pageTimer = new StartPageTimer(4500, 1000);
+        final StartPageTimer pageTimer = new StartPageTimer(2500, 1000);
         pageTimer.start();
 
 
