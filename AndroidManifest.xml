@@ -14,5 +14,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".test.MainActivity"
+                android:theme="@android:style/Theme.Black.NoTitleBar"/>
     </application>
 </manifest>

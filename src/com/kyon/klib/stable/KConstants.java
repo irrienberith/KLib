@@ -32,4 +32,10 @@ public class KConstants {
     public static final int TEXT_COLOR_BLUE = Color.parseColor("#007aff");
     public static final int TEXT_COLOR_LIGHT = Color.parseColor("#6a7883");
     public static final int TEXT_COLOR_RED = Color.parseColor("#ff3b30");
+
+    /**
+     * symbol
+     */
+
+    public static final String LOVE_HEART = "♡";
 }

@@ -3,6 +3,7 @@ package com.kyon.klib.test;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Gravity;
@@ -48,22 +49,23 @@ public class WelcomeActivity extends Activity {
                 ViewGroup.LayoutParams.MATCH_PARENT));
         image.setScaleType(ImageView.ScaleType.CENTER_CROP);
         image.setImageResource(KResourceUtil.getDrawableId(this, "sea"));
-        Animation scaleAnimation = new ScaleAnimation(1.0f, 1.15f, 1.0f, 1.15f,
+        Animation scaleAnimation = new ScaleAnimation(1.0f, 1.2f, 1.0f, 1.2f,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_PARENT, 0.5f);
-        scaleAnimation.setDuration(3800);
+        scaleAnimation.setDuration(5000);
         image.startAnimation(scaleAnimation);
         root.addView(image);
 
         TextView text = new TextView(this);
         text.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                KUIHelper.dip2px(this, KConstants.MESSAGE_HEIGHT)));
-        text.setTextColor(KConstants.TEXT_COLOR_LIGHT);
-        text.setTextSize(KConstants.TEXT_SIZE_NORMAL);
+                KUIHelper.dip2px(this, 2 * KConstants.MESSAGE_HEIGHT)));
+        text.setTextColor(Color.WHITE);
+        text.setTextSize(KConstants.TEXT_SIZE_LARGE);
         text.setGravity(Gravity.CENTER);
-        text.setText("Picture Magic~");
+        text.setText("小宝贝\nI " + KConstants.LOVE_HEART + " U");
+        text.setTypeface(Typeface.SERIF);
         text.setClickable(false);
         container.addView(text);
-
+        root.addView(container);
         setContentView(root);
     }
 
@@ -74,9 +76,9 @@ public class WelcomeActivity extends Activity {
     private void initPage() {
 
         /**
-         * 欢迎界面停留3500毫秒后进入主界面
+         * 欢迎界面停留4500毫秒后进入主界面
          */
-        final StartPageTimer pageTimer = new StartPageTimer(3500, 1000);
+        final StartPageTimer pageTimer = new StartPageTimer(4500, 1000);
         pageTimer.start();
 
 
@@ -97,12 +99,10 @@ public class WelcomeActivity extends Activity {
      * 进入主界面
      */
     private void loadPage() {
-
         Intent intent = new Intent();
         intent.setClass(WelcomeActivity.this,MainActivity.class);
         startActivity(intent);
         finish();
-        //container.removeAllViews();
     }
 
 
