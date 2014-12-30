@@ -56,7 +56,7 @@ public class ColorActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        color = intent.getIntExtra("color",KConstants.THEME_COLOR_PINK);
+        color = intent.getIntExtra("color",KConstants.THEME_COLOR_DARK);
 
         initUI();
     }

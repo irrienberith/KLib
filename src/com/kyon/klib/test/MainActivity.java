@@ -88,7 +88,7 @@ public class MainActivity extends Activity {
         }
 
         if (themeColor == 0) {
-            themeColor = KConstants.THEME_COLOR_PINK;
+            themeColor = KConstants.THEME_COLOR_DARK;
         }
     }
 
@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
         toolBar.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
         toolBar.setColor(themeColor);
-        toolBar.setTitle("小宝贝");
+        toolBar.setTitle("PicMagik");
         toolBar.setOnMenuClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

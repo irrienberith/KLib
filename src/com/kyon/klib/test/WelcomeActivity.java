@@ -26,7 +26,6 @@ public class WelcomeActivity extends Activity {
     private FrameLayout root;
     private ImageView image;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +60,7 @@ public class WelcomeActivity extends Activity {
         text.setTextColor(Color.WHITE);
         text.setTextSize(KConstants.TEXT_SIZE_LARGE);
         text.setGravity(Gravity.CENTER);
-        text.setText("小宝贝\nI " + KConstants.LOVE_HEART + " U");
+        text.setText("winter~");
         text.setTypeface(Typeface.SERIF);
         text.setClickable(false);
         container.addView(text);

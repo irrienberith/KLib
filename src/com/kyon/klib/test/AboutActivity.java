@@ -49,7 +49,7 @@ public class AboutActivity extends Activity {
 
     private void initPara(){
         Intent intent = getIntent();
-        color = intent.getIntExtra("color", KConstants.THEME_COLOR_PINK);
+        color = intent.getIntExtra("color", KConstants.THEME_COLOR_DARK);
     }
 
     private void initUI(){
@@ -63,7 +63,7 @@ public class AboutActivity extends Activity {
                 ViewGroup.LayoutParams.WRAP_CONTENT));
         toolBar.setColor(color);
         toolBar.setIconImage(0);
-        toolBar.setTitle("关于小宝贝");
+        toolBar.setTitle("关于PicMagik");
 
         LinearLayout sub = new LinearLayout(this);
         sub.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
@@ -87,7 +87,7 @@ public class AboutActivity extends Activity {
                 ViewGroup.LayoutParams.WRAP_CONTENT));
         text.setTextColor(KConstants.TEXT_COLOR_DARK);
         text.setGravity(Gravity.CENTER);
-        text.setText("小宝贝2.0\nCopyright (c) 2014 Kyon. All rights reserved.");
+        text.setText("PicMagik 1.0\nCopyright (c) 2014 Kyon. All rights reserved.");
 
         root.addView(toolBar);
         sub.addView(icon);
