@@ -244,7 +244,7 @@ public class MainActivity extends Activity {
         }
 
         if (requestCode == RESULT_GET_COLOR && resultCode == RESULT_OK && null != data) {
-            themeColor = data.getIntExtra("color", KConstants.THEME_COLOR_PINK);
+            themeColor = data.getIntExtra("color", KConstants.THEME_COLOR_DARK);
             initFloat();
             toolBar.setColor(themeColor);
             write2File();

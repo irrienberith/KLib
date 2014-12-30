@@ -22,6 +22,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,12 +31,15 @@ import android.widget.TextView;
 import com.kyon.klib.stable.KConstants;
 import com.kyon.klib.ui.KToolBar;
 import com.kyon.klib.utils.KColorPickerDialog;
+import com.kyon.klib.utils.KUIHelper;
 
 /**
  * Created by irrienberith on 14-12-30.
  */
 public class ColorActivity extends Activity {
 
+    private int width;
+    private int height;
     private int color;
 
     private KToolBar toolBar;
@@ -56,12 +60,20 @@ public class ColorActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        color = intent.getIntExtra("color",KConstants.THEME_COLOR_DARK);
-
+        color = intent.getIntExtra("color", KConstants.THEME_COLOR_DARK);
+        initSize();
         initUI();
     }
 
-    private void initUI(){
+    private void initSize() {
+        DisplayMetrics dm = new DisplayMetrics();
+        this.getWindowManager().getDefaultDisplay().getMetrics(dm);
+
+        width = (dm.widthPixels - KUIHelper.dip2px(this, KConstants.TOOL_HEIGHT)) / 4;
+        height = (dm.heightPixels - KUIHelper.dip2px(this, KConstants.TOOL_HEIGHT)) / 4;
+    }
+
+    private void initUI() {
         LinearLayout root = new LinearLayout(this);
         root.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
@@ -84,26 +96,26 @@ public class ColorActivity extends Activity {
 
         LinearLayout sub1 = new LinearLayout(this);
         sub1.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                300));
+                height));
         sub1.setGravity(Gravity.CENTER);
 
         LinearLayout sub2 = new LinearLayout(this);
         sub2.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                300));
+                height));
         sub2.setGravity(Gravity.CENTER);
 
         LinearLayout sub3 = new LinearLayout(this);
         sub3.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                300));
+                height));
         sub3.setGravity(Gravity.CENTER);
 
         LinearLayout sub4 = new LinearLayout(this);
         sub4.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                300));
+                height));
         sub4.setGravity(Gravity.CENTER);
 
         pink = new TextView(this);
-        pink.setLayoutParams(new ViewGroup.LayoutParams(200,100));
+        pink.setLayoutParams(new ViewGroup.LayoutParams(width, height / 3));
         pink.setText("Pink");
         pink.setTextColor(Color.WHITE);
         pink.setBackgroundColor(KConstants.THEME_COLOR_PINK);
@@ -119,7 +131,7 @@ public class ColorActivity extends Activity {
         });
 
         green = new TextView(this);
-        green.setLayoutParams(new ViewGroup.LayoutParams(200,100));
+        green.setLayoutParams(new ViewGroup.LayoutParams(width, height / 3));
         green.setText("Green");
         green.setTextColor(Color.WHITE);
         green.setBackgroundColor(KConstants.THEME_COLOR_GREEN);
@@ -135,7 +147,7 @@ public class ColorActivity extends Activity {
         });
 
         holo = new TextView(this);
-        holo.setLayoutParams(new ViewGroup.LayoutParams(200,100));
+        holo.setLayoutParams(new ViewGroup.LayoutParams(width, height / 3));
         holo.setText("Holo");
         holo.setTextColor(Color.WHITE);
         holo.setBackgroundColor(KConstants.THEME_COLOR_HOLO);
@@ -151,7 +163,7 @@ public class ColorActivity extends Activity {
         });
 
         dark = new TextView(this);
-        dark.setLayoutParams(new ViewGroup.LayoutParams(200,100));
+        dark.setLayoutParams(new ViewGroup.LayoutParams(width, height / 3));
         dark.setText("Dark");
         dark.setTextColor(Color.WHITE);
         dark.setBackgroundColor(KConstants.THEME_COLOR_DARK);
@@ -167,7 +179,7 @@ public class ColorActivity extends Activity {
         });
 
         custom = new TextView(this);
-        custom.setLayoutParams(new ViewGroup.LayoutParams(400, 100));
+        custom.setLayoutParams(new ViewGroup.LayoutParams(width * 3 / 2, height / 3));
         custom.setText("Custom");
         custom.setTextColor(Color.WHITE);
         custom.setBackgroundColor(Color.BLACK);
@@ -175,7 +187,7 @@ public class ColorActivity extends Activity {
         custom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog = new KColorPickerDialog(ColorActivity.this,color,"自定义颜色选择",new KColorPickerDialog.OnColorChangedListener() {
+                dialog = new KColorPickerDialog(ColorActivity.this, color, "自定义颜色选择", new KColorPickerDialog.OnColorChangedListener() {
                     @Override
                     public void colorChanged(int color) {
                         ColorActivity.this.color = color;
@@ -188,7 +200,7 @@ public class ColorActivity extends Activity {
         });
 
         confirm = new TextView(this);
-        confirm.setLayoutParams(new ViewGroup.LayoutParams(400, 100));
+        confirm.setLayoutParams(new ViewGroup.LayoutParams(width * 3 / 2, height / 3));
         confirm.setText("确认");
         confirm.setTextColor(Color.WHITE);
         confirm.setBackgroundColor(color);
@@ -222,10 +234,10 @@ public class ColorActivity extends Activity {
 
     }
 
-    private void setBackIntent(){
+    private void setBackIntent() {
         Intent intent = new Intent();
-        intent.putExtra("color",color);
-        setResult(RESULT_OK,intent);
+        intent.putExtra("color", color);
+        setResult(RESULT_OK, intent);
         finish();
 
     }
