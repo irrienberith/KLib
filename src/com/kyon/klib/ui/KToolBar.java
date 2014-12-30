@@ -35,10 +35,14 @@ import com.kyon.klib.utils.KUIHelper;
  * Created by irrienberith on 14-12-29.
  */
 public class KToolBar extends LinearLayout {
+    private int padding;
+    private int height;
     private FrameLayout root;
     private ImageView icon;
     private LinearLayout titleLayout;
     private TextView title;
+    private LinearLayout menuLayout;
+    private ImageView menu;
 
 
     public KToolBar(Context context) {
@@ -48,7 +52,7 @@ public class KToolBar extends LinearLayout {
     }
 
     private void initUI(Context context){
-        int height = KUIHelper.dip2px(context,KConstants.TOOL_HEIGHT);
+        height = KUIHelper.dip2px(context,KConstants.TOOL_HEIGHT);
         root = new FrameLayout(context);
         root.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,height ));
 
@@ -70,7 +74,7 @@ public class KToolBar extends LinearLayout {
         titleLayout.addView(title);
         root.addView(titleLayout);
 
-        int padding = KUIHelper.dip2px(context,KConstants.PADDING_NORMAL);
+        padding = KUIHelper.dip2px(context,KConstants.PADDING_NORMAL);
 
         icon = new ImageView(context);
         icon.setLayoutParams(new ViewGroup.LayoutParams(height,height));
@@ -85,6 +89,25 @@ public class KToolBar extends LinearLayout {
         shadow.setImageResource(KResourceUtil.getDrawableId(context,"line_shadow"));
         addView(root);
         addView(shadow);
+    }
+
+    public void setOnMenuClickListener(OnClickListener listener){
+        menuLayout = new LinearLayout(getContext());
+        menuLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        menuLayout.setGravity(Gravity.RIGHT);
+
+        menu = new ImageView(getContext());
+        menu.setLayoutParams(new ViewGroup.LayoutParams(height, height));
+        menu.setPadding(padding, padding, padding, padding);
+        menu.setImageResource(KResourceUtil.getDrawableId(getContext(), "ic_menu"));
+        menu.setScaleType(ImageView.ScaleType.FIT_CENTER);
+
+        menuLayout.addView(menu);
+        root.addView(menuLayout);
+
+        menu.setOnClickListener(listener);
+
     }
 
     public void setOnIconClickListener(OnClickListener listener){

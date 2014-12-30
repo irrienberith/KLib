@@ -104,6 +104,12 @@ public class MainActivity extends Activity {
                 ViewGroup.LayoutParams.WRAP_CONTENT));
         toolBar.setColor(themeColor);
         toolBar.setTitle("小宝贝");
+        toolBar.setOnMenuClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.this.onMenuOpened(0,null);
+            }
+        });
         toolBar.setOnIconClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
