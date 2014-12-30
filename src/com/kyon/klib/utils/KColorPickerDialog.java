@@ -383,10 +383,6 @@ public class KColorPickerDialog extends Dialog {
 		return title;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
 	public int getmInitialColor() {
 		return mInitialColor;
 	}
