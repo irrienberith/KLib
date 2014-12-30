@@ -69,7 +69,7 @@ public class ColorActivity extends Activity {
         DisplayMetrics dm = new DisplayMetrics();
         this.getWindowManager().getDefaultDisplay().getMetrics(dm);
 
-        width = (dm.widthPixels - KUIHelper.dip2px(this, KConstants.TOOL_HEIGHT)) / 4;
+        width = (dm.widthPixels - KUIHelper.dip2px(this, KConstants.TOOL_HEIGHT)) / 3;
         height = (dm.heightPixels - KUIHelper.dip2px(this, KConstants.TOOL_HEIGHT)) / 4;
     }
 
