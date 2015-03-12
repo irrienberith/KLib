@@ -2,23 +2,14 @@ package com.kyon.klib.base;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.*;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.View;
-
-import com.kyon.klib.base.KStringUtils;
 import com.kyon.klib.stable.KConstants;
+
+import java.util.ArrayList;
 
 
 /**
@@ -321,8 +312,9 @@ public class KUIHelper {
 
     /**
      * 去除字符串前后双引号
+     *
      * @param origin 原字符串
-     * @return       结果字符串
+     * @return 结果字符串
      */
     public static String trimQuote(String origin) {
         String afterConvert = origin;
@@ -334,7 +326,8 @@ public class KUIHelper {
 
     /**
      * 去除字符串开头的换行符
-     * @param origin  原字符串
+     *
+     * @param origin 原字符串
      * @return
      */
     public static String trimNewLine(String origin) {
@@ -356,4 +349,14 @@ public class KUIHelper {
         target += "\n" + part1 + ":" + part2;
         return target;
     }
+
+
+    public static ArrayList<float[]> makePositions2D(Rect rect) {
+        ArrayList<float[]> points = new ArrayList<float[]>();
+        float initialX = rect.centerX();
+        float initialY = rect.centerY();
+
+
+    }
+
 }
