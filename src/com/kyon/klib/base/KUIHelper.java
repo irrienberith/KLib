@@ -1,4 +1,4 @@
-package com.kyon.klib.utils;
+package com.kyon.klib.base;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,6 +17,7 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.View;
 
+import com.kyon.klib.base.KStringUtils;
 import com.kyon.klib.stable.KConstants;
 
 

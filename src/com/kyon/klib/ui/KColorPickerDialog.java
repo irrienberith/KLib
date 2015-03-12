@@ -16,7 +16,7 @@
  *   *****************************************************************************
  */
 
-package com.kyon.klib.utils;
+package com.kyon.klib.ui;
 
 import android.app.Dialog;
 import android.content.Context;

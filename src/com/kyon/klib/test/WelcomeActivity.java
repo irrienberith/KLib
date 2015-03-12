@@ -13,9 +13,8 @@ import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.*;
 import com.kyon.klib.stable.KConstants;
-import com.kyon.klib.ui.KMessager;
-import com.kyon.klib.utils.KResourceUtil;
-import com.kyon.klib.utils.KUIHelper;
+import com.kyon.klib.base.KResourceUtil;
+import com.kyon.klib.base.KUIHelper;
 
 /**
  * Created by irrienberith on 14-12-25, 上午11:54.

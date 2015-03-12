@@ -30,8 +30,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.kyon.klib.stable.KConstants;
 import com.kyon.klib.ui.KToolBar;
-import com.kyon.klib.utils.KColorPickerDialog;
-import com.kyon.klib.utils.KUIHelper;
+import com.kyon.klib.ui.KColorPickerDialog;
+import com.kyon.klib.base.KUIHelper;
 
 /**
  * Created by irrienberith on 14-12-30.

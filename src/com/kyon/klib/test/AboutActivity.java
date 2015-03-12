@@ -29,7 +29,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.kyon.klib.stable.KConstants;
 import com.kyon.klib.ui.KToolBar;
-import com.kyon.klib.utils.KResourceUtil;
+import com.kyon.klib.base.KResourceUtil;
 
 /**
  * Created by irrienberith on 14-12-30.

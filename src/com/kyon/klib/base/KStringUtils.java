@@ -1,4 +1,4 @@
-package com.kyon.klib.utils;
+package com.kyon.klib.base;
 
 import java.util.StringTokenizer;
 

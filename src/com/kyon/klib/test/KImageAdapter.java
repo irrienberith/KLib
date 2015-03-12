@@ -25,7 +25,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import com.kyon.klib.utils.KResourceUtil;
+import com.kyon.klib.base.KResourceUtil;
 
 import java.util.ArrayList;
 

@@ -16,7 +16,7 @@
  *   *****************************************************************************
  */
 
-package com.kyon.klib.utils;
+package com.kyon.klib.base;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

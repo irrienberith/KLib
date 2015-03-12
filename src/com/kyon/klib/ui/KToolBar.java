@@ -28,8 +28,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.kyon.klib.stable.KConstants;
-import com.kyon.klib.utils.KResourceUtil;
-import com.kyon.klib.utils.KUIHelper;
+import com.kyon.klib.base.KResourceUtil;
+import com.kyon.klib.base.KUIHelper;
 
 /**
  * Created by irrienberith on 14-12-29.

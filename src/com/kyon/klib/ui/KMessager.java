@@ -34,9 +34,9 @@ import android.widget.Toast;
 import com.kyon.klib.effects.BaseEffects;
 import com.kyon.klib.effects.Effectstype;
 import com.kyon.klib.stable.KConstants;
-import com.kyon.klib.utils.KResourceUtil;
-import com.kyon.klib.utils.KStringUtils;
-import com.kyon.klib.utils.KUIHelper;
+import com.kyon.klib.base.KResourceUtil;
+import com.kyon.klib.base.KStringUtils;
+import com.kyon.klib.base.KUIHelper;
 
 public class KMessager {
 
