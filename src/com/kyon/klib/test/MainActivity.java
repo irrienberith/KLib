@@ -38,6 +38,7 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import com.kyon.klib.R;
+import com.kyon.klib.graphic.k2d.KDropView;
 import com.kyon.klib.stable.KConstants;
 import com.kyon.klib.ui.FloatingActionButton;
 import com.kyon.klib.ui.KMessager;
@@ -69,12 +70,23 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initData();
-        initUI();
-        initFloat();
-        initList();
+//        initData();
+//        initUI();
+//        initFloat();
+//        initList();
+        initDropView();
 
     }
+
+    private void initDropView(){
+        KDropView dropView = new KDropView(this);
+        dropView.setBackgroundColor(Color.WHITE);
+        dropView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        setContentView(dropView);
+
+    }
+
 
     private void initData() {
         String data = "";

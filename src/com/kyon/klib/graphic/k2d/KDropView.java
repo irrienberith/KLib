@@ -19,13 +19,21 @@
 package com.kyon.klib.graphic.k2d;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 
 /**
  * Created by irrienberith on 15-3-12.
  */
 public class KDropView extends View {
+
+    private float touchX = 0;
+    private float touchY = 0;
+
     public KDropView(Context context) {
         super(context);
     }
@@ -38,4 +46,30 @@ public class KDropView extends View {
         super(context, attrs, defStyleAttr);
     }
 
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        Paint paint = new Paint();
+        paint.setColor(Color.RED);
+        if(touchX>0 && touchY>0) {
+            KDraw2D.drawRing(canvas,Color.RED,touchX,touchY,30,12);
+        }
+
+    }
+
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int action = event.getAction();
+        switch (action){
+            case MotionEvent.ACTION_DOWN:
+                touchX = event.getX();
+                touchY = event.getY();
+                break;
+
+        }
+        invalidate();
+        return false;
+    }
 }
