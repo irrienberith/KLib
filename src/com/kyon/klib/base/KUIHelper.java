@@ -351,12 +351,12 @@ public class KUIHelper {
     }
 
 
-    public static ArrayList<float[]> makePositions2D(Rect rect) {
-        ArrayList<float[]> points = new ArrayList<float[]>();
-        float initialX = rect.centerX();
-        float initialY = rect.centerY();
-
-
-    }
+//    public static ArrayList<float[]> makePositions2D(Rect rect) {
+//        ArrayList<float[]> points = new ArrayList<float[]>();
+//        float initialX = rect.centerX();
+//        float initialY = rect.centerY();
+//
+//
+//    }
 
 }

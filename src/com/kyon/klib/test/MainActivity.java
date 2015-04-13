@@ -70,11 +70,11 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        initData();
-//        initUI();
-//        initFloat();
-//        initList();
-        initDropView();
+        initData();
+        initUI();
+        initFloat();
+        initList();
+//        initDropView();
 
     }
 

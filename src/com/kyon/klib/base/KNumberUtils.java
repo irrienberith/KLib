@@ -31,9 +31,9 @@ public class KNumberUtils {
     }
 
 
-    public static float[] makeNiceRing(int maxDis){
-        float randA
-
-
-    }
+//    public static float[] makeNiceRing(int maxDis){
+//        float randA
+//
+//
+//    }
 }
